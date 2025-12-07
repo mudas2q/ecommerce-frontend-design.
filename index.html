@@ -1,12 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./CSS files/style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./CSS-files/style.css" />
+    <script
+      src="https://kit.fontawesome.com/464aab172b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google fonts -->
+  </head>
+
+  <body>
+    <header class="spacing">
+      <div class="brand-logo">
+        <a href="./index.html">
+          <img
+            src="./Assets/Logo/logo-colored.svg"
+            alt="image failed to load"
+            title="Brand Logo"
+          />
+        </a>
+      </div>
+      <form class="header-form">
+        <input type="search" id="search" placeholder="Search" />
+
+        <select class="category-select">
+          <option value="All category" selected>All category</option>
+          <option value="Automobiles">Automobiles</option>
+          <option value="Clothes and wear">Clothes and wear</option>
+          <option value="Computer and tech">Computer and tech</option>
+          <option value="Computer and tech">Tools, equipments</option>
+          <option value="Sports and outdoor">Sports and outdoor</option>
+        </select>
+
+        <label for="search" class="search-input">Search</label>
+      </form>
+
+      <nav class="navbar">
+        <div class="nav-icons">
+          <div>
+            <img src="./Assets/Icons/profile.svg" alt="" />
+            <p>Profile</p>
+          </div>
+
+          <div>
+            <img src="./Assets/Icons/message.svg" alt="" />
+            <p>Message</p>
+          </div>
+
+          <div>
+            <img src="./Assets/Icons/order.svg" alt="" />
+            <p>Order</p>
+          </div>
+
+          <div>
+            <img src="./Assets/Icons/my-cart.svg" alt="" />
+            <p>My cart</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+        <!-- Top Bar -->
+<div class="spacing top-bar">
+    <div class="top-bar-content">
+        <div class="category-links">
+            <div class="all-category">
+                <span>All category</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="top-links">
+                <a href="#">Hot offers</a>
+                <a href="#">Gift boxes</a>
+                <a href="#">Projects</a>
+                <a href="#">Menu item</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+        <div class="top-right">
+            <div class="language-selector">
+                <i class="fas fa-globe"></i>
+                <span>English, USD</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="ship-to">
+                <i class="fas fa-truck"></i>
+                <span>Ship to <img src="./Assets/Images/flag.svg" alt=""></span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- HERO SECTION -->
+<section class="spacing hero-section">
+
+    <!-- Left Category List -->
+    <div class="hero-categories">
+        <ul>
+            <li class="active">Automobiles</li>
+            <li>Clothes and wear</li>
+            <li>Home interiors</li>
+            <li>Computer and tech</li>
+            <li>Tools, equipments</li>
+            <li>Sports and outdoor</li>
+            <li>Animal and pets</li>
+            <li>Machinery tools</li>
+            <li>More category</li>
+        </ul>
+    </div>
+
+    <!-- Main Banner -->
+    <div class="hero-banner">
+        <div class="banner-text">
+            <p>Latest trending</p>
+            <h2>Electronic items</h2>
+            <button>Learn more</button>
+        </div>
+
+        <img src="./Assets/Images/hero-banner.svg" alt="Hero Banner">
+    </div>
+
+    <!-- Right Side Boxes -->
+    <div class="hero-right">
+
+        <!-- Login Box -->
+        <div class="login-box">
+            <div class="user-info">
+                <div class="user-icon"></div>
+                <div>
+                    <p class="hi-user">Hi, user</p>
+                    <p class="sub-text">let’s get stated</p>
+                </div>
+            </div>
+            <button class="join-btn">Join now</button>
+            <button class="login-btn">Log in</button>
+        </div>
+
+        <!-- Offer Box -->
+        <div class="offer-box">
+            <p>Get US $10 off<br>with a new supplier</p>
+        </div>
+
+        <!-- Supplier Quote Box -->
+        <div class="supplier-box">
+            <p>Send quotes with<br>supplier preferences</p>
+        </div>
+
+    </div>
+
+</section>
+
+  </body>
 </html>
