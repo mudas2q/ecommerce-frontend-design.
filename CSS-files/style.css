@@ -791,3 +791,144 @@ header {
         width: 200px;
     }
 }
+
+
+/* inquery section */
+/* ================= INQUIRY SECTION START ================= */
+
+.inquiry-section {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.inquiry-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-white);
+    min-height: 380px; 
+    background: linear-gradient(94.99deg, #2C7CF1 7.19%, rgba(0, 209, 255, 0.5) 89.49%), 
+                      url('../Assets/Images/inquiry-bg.svg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Left Content */
+.inquiry-content h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.inquiry-content p {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Right Form Card */
+.inquiry-card {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.inquiry-card h3 {
+    color: var(--text-primary);
+    font-size: 20px;
+    margin-bottom: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Inputs & Textarea Styling */
+.inquiry-card input, 
+.inquiry-card textarea, 
+.inquiry-card select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--text-primary);
+    transition: all 0.3s var(--ease);
+}
+
+.inquiry-card input:focus, 
+.inquiry-card textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 103, 255, 0.1);
+}
+
+/* Form Row (Quantity + Select) */
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.form-row input {
+    flex: 2;
+}
+
+.select-wrapper {
+    flex: 1;
+}
+
+/* Button Styling */
+.inquiry-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+}
+
+.inquiry-btn:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 103, 255, 0.3);
+}
+
+/* SMART ANIMATIONS */
+.inquiry-container {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover effect on card input fields */
+.inquiry-card input:hover, 
+.inquiry-card textarea:hover {
+    border-color: #adb5bd;
+}
+
+/* Responsive Fix */
+@media (max-width: 992px) {
+    .inquiry-container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .inquiry-content h2 br, .inquiry-content p br {
+        display: none;
+    }
+}
