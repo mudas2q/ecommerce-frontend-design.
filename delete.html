@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brand — Home</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root{
+  --color-primary: #0067FF;
+  --color-primary-600: #127FFF;
+  --accent-warm: #F38332;
+  --accent-cool: #48B4C8;
+  --muted-blue: #E3F0FF;
+  --text-primary: #1C1C1C;
+  --text-secondary: #505050;
+  --text-muted: #8B96A5;
+  --bg: #F7FAFC;
+  --white: #FFFFFF;
+  --border: #E0E0E0;
+  --radius: 8px;
+  --container-gap: 7rem;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --max-width: 1200px;
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.06);
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset & base */
+*{box-sizing:border-box;margin:0;padding:0}
+
+
+/* Spacing helper */
+.spacing{
+  padding-left: var(--container-gap);
+  padding-right: var(--container-gap);
+}
+
+/* Header */
+.site-header{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding: 3rem auto;
+}
+
+/* Brand */
+.brand-logo img{display:block;width:150px;height:auto}
+
+/* Search form */
+.header-form{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  flex:1;
+  max-width:720px;
+  min-width:420px;
+  padding:6px;
+  border:3px solid var(--color-primary);
+  border-radius:7px;
+  background:var(--white);
+  transition:box-shadow 220ms var(--ease),transform 220ms var(--ease);
+}
+.header-form:focus-within{box-shadow:0 10px 30px rgba(0,103,255,0.08);transform:translateY(-2px)}
+.search-input{
+  flex:1;
+  border:0;
+  outline:none;
+  padding:10px 12px;
+  font-size:16px;
+  background:transparent;
+  color:inherit;
+}
+.category-select{
+  width:150px;
+  padding:8px 10px;
+  border:0;
+  border-left:1px solid rgba(0,0,0,0.06);
+  background:transparent;
+  cursor:pointer;
+  color:var(--text-primary);
+}
+.search-btn{
+  background:var(--color-primary);
+  color:var(--white);
+  border:0;
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+.search-btn:hover{background:var(--color-primary-600)}
+
+/* Navbar icons */
+.navbar{display:flex;align-items:center;gap:1.5rem}
+.nav-icons{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
+.nav-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  padding:6px;
+  color:var(--text-secondary);
+}
+.nav-item img{width:24px;height:24px;object-fit:contain}
+.nav-item span{font-size:12px;color:var(--text-secondary)}
+
+/* Top bar */
+.top-bar{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:1rem 0;
+}
+.top-bar-content{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.category-links{display:flex;align-items:center;gap:30px}
+.all-category{
+  display:flex;align-items:center;gap:6px;border:0;background:transparent;cursor:pointer;font-weight:500;padding:6px;
+}
+.top-links{display:flex;gap:2rem;align-items:center}
+.top-link{color:var(--text-primary);text-decoration:none;font-weight:500;transition:color 180ms var(--ease)}
+.top-link:hover{color:var(--color-primary)}
+.top-link-group{display:flex;align-items:center;gap:8px}
+
+/* Top right controls */
+.top-right{display:flex;align-items:center;gap:20px}
+.language-selector,.ship-to{display:flex;align-items:center;gap:8px;border:0;background:transparent;cursor:pointer;color:var(--text-primary)}
+.flag{height:14px;vertical-align:middle;margin-left:6px}
+
+/* HERO SECTION */
+.hero-section{
+  display:grid;
+  grid-template-columns:240px 1fr 200px;
+  gap:16px;
+  padding:18px 0;
+  margin:0 0;
+  background:transparent;
+  align-items:start;
+}
+
+/* Left categories */
+.hero-categories{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:10px 0;
+}
+.hero-categories ul{list-style:none;margin:0;padding:0}
+.hero-categories li{
+  padding:12px 16px;
+  font-size:15px;
+  color:var(--text-primary);
+  cursor:pointer;
+  transition:padding-left 160ms var(--ease),background 160ms var(--ease);
+}
+.hero-categories li:hover{background:var(--muted-blue);padding-left:20px}
+.hero-categories .active{background:var(--muted-blue);font-weight:600;border-radius:6px}
+
+/* Main banner */
+.hero-banner{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  background:#dff6f2;
+  border:1px solid rgba(0,0,0,0.04);
+  box-shadow:var(--shadow-sm);
+}
+.banner-img{width:100%;height:auto;display:block;object-fit:cover}
+
+/* Banner text overlay */
+.banner-text{
+  position:absolute;
+  left:40px;
+  top:50%;
+  transform:translateY(-50%);
+  max-width:340px;
+  color:var(--text-primary);
+  background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+  padding:16px;
+  border-radius:10px;
+}
+.banner-lead{margin:0;font-size:18px;color:var(--text-secondary)}
+.banner-title{margin:6px 0 0;font-size:28px;font-weight:700}
+.btn-learn{display:inline-block;margin-top:12px;padding:10px 16px;background:#fff;color:var(--text-primary);border-radius:6px;text-decoration:none;border:1px solid rgba(0,0,0,0.04);font-weight:600}
+.btn-learn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.06);transition:transform 180ms var(--ease)}
+
+/* Right column widgets */
+.hero-right{display:flex;flex-direction:column;gap:12px}
+.login-box{background:var(--muted-blue);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.user-info{display:flex;gap:12px;align-items:center}
+.user-icon img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.hi-user{margin:0;font-weight:600}
+.sub-text{margin:2px 0 0;color:var(--text-secondary);font-size:14px}
+.login-actions{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.join-btn{background:var(--color-primary);color:var(--white);padding:10px;border-radius:6px;border:0;cursor:pointer;font-weight:600}
+.join-btn:hover{background:var(--color-primary-600);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,103,255,0.12)}
+.login-btn{background:var(--white);color:var(--color-primary);padding:10px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;font-weight:600}
+.login-btn:hover{background:#f8f9fa;transform:translateY(-2px)}
+
+/* Offer & supplier */
+.offer-box{background:var(--accent-warm);color:var(--white);padding:1.1rem;border-radius:var(--radius);font-weight:600}
+.supplier-box{background:var(--accent-cool);color:var(--white);padding:1.1rem;border-radius:var(--radius);font-weight:600}
+
+/* Interaction defaults */
+.header-form, .category-select, .search-btn, .nav-item, .all-category, .top-link, .language-selector, .ship-to, .hero-categories li, .btn-learn, .join-btn, .login-btn, .offer-box, .supplier-box {
+  transition:all 180ms var(--ease);
+}
+
+/* Hover polish */
+.hero-banner:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.08);transition:transform 300ms var(--ease)}
+.offer-box:hover,.supplier-box:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(0,0,0,0.08)}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+/* Responsive */
+@media (max-width:1100px){
+  :root{--container-gap:2rem}
+  .spacing{padding-left:2rem;padding-right:2rem}
+  .header-form{min-width:0;max-width:100}
+  .hero-section{grid-template-columns:1fr;gap:12px}
+  .hero-categories{order:2}
+  .hero-banner{order:1;min-height:200px}
+  .hero-right{order:3}
+}
+@media (max-width:480px){
+  :root{--container-gap:1rem}
+  .spacing{padding-left:1rem;padding-right:1rem}
+  .header-form{display:none}
+  .brand-logo img{width:120px}
+  .banner-title{font-size:20px}
+  .hero-banner{min-height:160px}
+  .nav-item span{display:none}
+}
+  </style>
+</head>
+<body>
+  <header class="site-header spacing" role="banner">
+    <div class="brand-logo">
+      <a href="./index.html" aria-label="Brand homepage">
+        <img src="./Assets/Logo/logo-colored.svg" alt="Brand logo" title="Brand Logo">
+      </a>
+    </div>
+
+    <form class="header-form" role="search" action="#" method="get" aria-label="Header search">
+      <input class="search-input" type="search" id="search" name="q" placeholder="Search" aria-label="Search site">
+
+      <select class="category-select" name="category" aria-label="Select category">
+        <option value="All category" selected>All category</option>
+        <option value="Automobiles">Automobiles</option>
+        <option value="Clothes and wear">Clothes and wear</option>
+        <option value="Home interiors">Home interiors</option>
+        <option value="Computer and tech">Computer and tech</option>
+        <option value="Tools equipments">Tools, equipments</option>
+        <option value="Sports and outdoor">Sports and outdoor</option>
+      </select>
+
+      <button type="submit" class="search-btn" aria-label="Search">Search</button>
+    </form>
+
+    <nav class="navbar" role="navigation" aria-label="User navigation">
+      <ul class="nav-icons" role="list">
+        <li role="listitem"><button class="nav-item" type="button" aria-label="Profile"><img src="./Assets/Icons/profile.svg" alt="" /><span>Profile</span></button></li>
+        <li role="listitem"><button class="nav-item" type="button" aria-label="Message"><img src="./Assets/Icons/message.svg" alt="" /><span>Message</span></button></li>
+        <li role="listitem"><button class="nav-item" type="button" aria-label="Orders"><img src="./Assets/Icons/order.svg" alt="" /><span>Order</span></button></li>
+        <li role="listitem"><button class="nav-item" type="button" aria-label="My cart"><img src="./Assets/Icons/my-cart.svg" alt="" /><span>My cart</span></button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Top Bar -->
+  <div class="top-bar spacing" role="region" aria-label="Top bar">
+    <div class="top-bar-content">
+      <div class="category-links">
+        <button class="all-category" type="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <span>All category</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+
+        <nav class="top-links" aria-label="Quick links">
+          <a class="top-link" href="#">Hot offers</a>
+          <a class="top-link" href="#">Gift boxes</a>
+          <a class="top-link" href="#">Projects</a>
+          <a class="top-link" href="#">Menu item</a>
+          <div class="top-link-group">
+            <a class="top-link" href="#">Help</a>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </div>
+        </nav>
+      </div>
+
+      <div class="top-right">
+        <button class="language-selector" type="button" aria-label="Language and currency">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span>English, USD</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+
+        <button class="ship-to" type="button" aria-label="Ship to">
+          <i class="fa-solid fa-truck" aria-hidden="true"></i>
+          <span>Ship to <img src="./Assets/Images/flag.svg" alt="country flag" class="flag"></span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <main class="hero-section spacing" role="main" aria-label="Main content">
+    <!-- Left Category List -->
+    <aside class="hero-categories" aria-label="Categories">
+      <ul>
+        <li class="active" tabindex="0">Automobiles</li>
+        <li tabindex="0">Clothes and wear</li>
+        <li tabindex="0">Home interiors</li>
+        <li tabindex="0">Computer and tech</li>
+        <li tabindex="0">Tools, equipments</li>
+        <li tabindex="0">Sports and outdoor</li>
+        <li tabindex="0">Animal and pets</li>
+        <li tabindex="0">Machinery tools</li>
+        <li tabindex="0">More category</li>
+      </ul>
+    </aside>
+
+    <!-- Main Banner -->
+    <section class="hero-banner" aria-label="Promotional banner">
+      <div class="banner-text">
+        <p class="banner-lead">Latest trending</p>
+        <h2 class="banner-title">Electronic items</h2>
+        <a class="btn-learn" href="#" role="button">Learn more</a>
+      </div>
+
+      <img src="./Assets/Images/hero-banner.svg" alt="Headphones and phone on mint background" class="banner-img">
+    </section>
+
+    <!-- Right Side Boxes -->
+    <aside class="hero-right" aria-label="Side panel">
+      <!-- Login Box -->
+      <section class="login-box" aria-labelledby="account-heading">
+        <div class="user-info">
+          <div class="user-icon">
+            <img src="./Assets/Icons/avatars.svg" alt="User avatar">
+          </div>
+          <div class="user-text">
+            <p id="account-heading" class="hi-user">Hi, user</p>
+            <p class="sub-text">let’s get started</p>
+          </div>
+        </div>
+
+        <div class="login-actions">
+          <button class="join-btn" type="button">Join now</button>
+          <button class="login-btn" type="button">Log in</button>
+        </div>
+      </section>
+
+      <!-- Offer Box -->
+      <div class="offer-box" role="note" aria-label="Special offer">
+        <p>Get US $10 off<br>with a new<br>supplier</p>
+      </div>
+
+      <!-- Supplier Quote Box -->
+      <div class="supplier-box" role="note" aria-label="Supplier quotes">
+        <p>Send quotes with<br>supplier<br>preferences</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

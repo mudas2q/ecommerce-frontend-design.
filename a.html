@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern E-commerce Platform</title>
+    <link rel="stylesheet" href="./CSS-files/style.css" />
+    <script
+      src="https://kit.fontawesome.com/464aab172b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+:root {
+  /* Color Variables */
+  --color-primary: #0067ff;
+  --color-primary-light: #127fff;
+  --color-lighter-blue: #e3f0ff;
+  --color-white: #ffffff;
+  --main-body-color: #f7fafc;
+  --border-color: #e0e0e0;
+  --color-offer: #f38332;
+  --color-supplier: #48b4c8;
+
+  /* Text Variables */
+  --text-primary: #1c1c1c;
+  --text-secondary: #505050;
+  --text-muted: #8b96a5;
+
+  /* Typography */
+  --font-main: "Inter", sans-serif;
+
+  /* Spacing */
+  --spacing-lg: 7rem;
+  --spacing-md: 1rem;
+  --spacing-sm: 0.5rem;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+body {
+  background-color: var(--main-body-color);
+  color: var(--text-primary);
+}
+
+.spacing {
+  padding-right: var(--spacing-lg);
+  padding-left: var(--spacing-lg);
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+}
+
+.brand-logo img {
+  width: 150px;
+  display: block;
+}
+
+/* Search Form */
+.header-form {
+  display: flex;
+  min-height: 40px;
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+#search {
+  padding: 0.6rem 0.9rem;
+  width: 441px;
+  border: none;
+  border-right: 1px solid var(--border-color);
+  font-size: 16px;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.category-select {
+  width: 150px;
+  padding: 0 0.3rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+  border: none;
+  border-left: 1px solid var(--color-primary);
+}
+
+.search-btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* Navigation Icons */
+.nav-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+.nav-item:hover {
+  color: var(--color-primary);
+}
+
+.nav-item:hover img {
+  filter: brightness(0) saturate(100%) invert(33%) sepia(98%) saturate(2091%)
+    hue-rotate(204deg) brightness(100%) contrast(101%);
+}
+
+.nav-icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.nav-icons p {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  background-color: var(--color-white);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.all-category-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.top-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.top-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.top-links a:hover {
+  color: var(--color-primary);
+}
+
+.help-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.language-selector,
+.ship-to {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+  display: grid;
+  grid-template-columns: 240px 1fr 200px;
+  gap: 0.7rem;
+  padding: 0.8rem;
+  margin: 1rem auto;
+  max-width: calc(100% - (var(--spacing-lg) * 2));
+  background-color: var(--color-white);
+  border: 1px solid #dee2e7;
+  border-radius: var(--radius-md);
+}
+
+/* Left Category List */
+.hero-categories {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  padding: 10px 0;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-item {
+  padding: 12px 16px;
+  font-size: 15px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.category-item:hover {
+  background: var(--color-lighter-blue);
+}
+
+.category-item.active {
+  background: var(--color-lighter-blue);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+/* Main Banner */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 28%;
+  left: 40px;
+  transform: translateY(-50%);
+  color: var(--text-primary);
+  max-width: 260px;
+}
+
+.banner-text p {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.banner-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.banner-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.banner-btn:hover {
+  background: #f1f1f1;
+}
+
+/* Right Side Boxes */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Login Box */
+.login-box {
+  background: var(--color-lighter-blue);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.user-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.user-icon img {
+  width: 44px;
+  border-radius: 50%;
+}
+
+.hi-user,
+.sub-text {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Button Components */
+.btn {
+  margin-top: 12px;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+}
+
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: #f0f7ff;
+}
+
+/* Offer & Supplier Boxes */
+.offer-box,
+.supplier-box {
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-white);
+}
+
+.offer-box {
+  background: var(--color-offer);
+}
+
+.supplier-box {
+  background: var(--color-supplier);
+}
+    </style>
+  </head>
+
+  <body>
+    <header class="spacing">
+      <div class="brand-logo">
+        <a href="./index.html">
+          <img
+            src="./Assets/Logo/logo-colored.svg"
+            alt="Brand Logo"
+            title="Brand Logo"
+          />
+        </a>
+      </div>
+
+      <form class="header-form">
+        <input
+          type="search"
+          id="search"
+          placeholder="Search"
+          aria-label="Search products"
+        />
+        <select class="category-select" aria-label="Select product category">
+          <option value="all" selected>All category</option>
+          <option value="automobiles">Automobiles</option>
+          <option value="clothes">Clothes and wear</option>
+          <option value="tech">Computer and tech</option>
+          <option value="tools">Tools, equipment</option>
+          <option value="sports">Sports and outdoor</option>
+        </select>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+
+      <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-icons">
+          <div class="nav-item">
+            <img src="./Assets/Icons/profile.svg" alt="Profile" />
+            <p>Profile</p>
+          </div>
+          <div class="nav-item">
+            <img src="./Assets/Icons/message.svg" alt="Messages" />
+            <p>Message</p>
+          </div>
+          <div class="nav-item">
+            <img src="./Assets/Icons/order.svg" alt="Orders" />
+            <p>Order</p>
+          </div>
+          <div class="nav-item">
+            <img src="./Assets/Icons/my-cart.svg" alt="Shopping cart" />
+            <p>My cart</p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Top Bar -->
+    <div class="spacing top-bar">
+      <div class="top-bar-content">
+        <div class="category-links">
+          <button class="all-category-btn">
+            <i class="fa-solid fa-bars"></i>
+            <span>All category</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="top-links">
+            <a href="#">Hot offers</a>
+            <a href="#">Gift boxes</a>
+            <a href="#">Projects</a>
+            <a href="#">Menu item</a>
+            <div class="help-dropdown">
+              <a href="#">Help</a>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="top-right">
+          <div class="language-selector">
+            <i class="fas fa-globe"></i>
+            <span>English, USD</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="ship-to">
+            <i class="fas fa-truck"></i>
+            <span>
+              Ship to
+              <img src="./Assets/Images/flag.svg" alt="Country flag" />
+            </span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="spacing hero-section">
+      <!-- Left Category List -->
+      <aside class="hero-categories">
+        <ul class="category-list">
+          <li class="category-item active">Automobiles</li>
+          <li class="category-item">Clothes and wear</li>
+          <li class="category-item">Home interiors</li>
+          <li class="category-item">Computer and tech</li>
+          <li class="category-item">Tools, equipment</li>
+          <li class="category-item">Sports and outdoor</li>
+          <li class="category-item">Animal and pets</li>
+          <li class="category-item">Machinery tools</li>
+          <li class="category-item">More category</li>
+        </ul>
+      </aside>
+
+      <!-- Main Banner -->
+      <div class="hero-banner">
+        <div class="banner-text">
+          <p>Latest trending</p>
+          <h2>Electronic items</h2>
+          <button class="banner-btn">Learn more</button>
+        </div>
+        <img
+          src="./Assets/Images/hero-banner.svg"
+          alt="Electronic items showcase"
+        />
+      </div>
+
+      <!-- Right Side Boxes -->
+      <div class="hero-right">
+        <!-- Login Box -->
+        <div class="login-box">
+          <div class="user-info">
+            <div class="user-icon">
+              <img src="./Assets/Icons/avatars.svg" alt="User avatar" />
+            </div>
+            <div>
+              <p class="hi-user">Hi, user</p>
+              <p class="sub-text">let's get started</p>
+            </div>
+          </div>
+          <button class="btn btn-primary">Join now</button>
+          <button class="btn btn-secondary">Log in</button>
+        </div>
+
+        <!-- Offer Box -->
+        <div class="offer-box">
+          <p>Get US $10 off<br />with a new<br />supplier</p>
+        </div>
+
+        <!-- Supplier Quote Box -->
+        <div class="supplier-box">
+          <p>Send quotes with<br />supplier<br />preferences</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
